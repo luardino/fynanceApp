@@ -1,0 +1,15 @@
+import { Button, Text, View } from "react-native";
+import { router, useLocalSearchParams } from "expo-router";
+
+export default function InProgress(){
+    const params = useLocalSearchParams<{id: string}>();
+    return (
+        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
+            <Text>ID: {params.id}</Text>
+            <Button
+                title="Go Back" 
+                onPress={() => router.back()}
+            />
+        </View>
+    )
+}
