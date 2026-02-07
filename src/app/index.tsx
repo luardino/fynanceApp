@@ -1,26 +1,17 @@
-import { View, Text, Button } from "react-native"
-import { router } from "expo-router"
+import { HomeHeader } from "@/components/HomeHeader";
+import { View } from "react-native";
+import { colors } from "@/theme";
 
+const summary = {
+    total: "€ 2.043,00",
+    input: { label: "Entries", value: "+ € 7.200,00", color: colors.green[400] },
+    output: { label: "Exits", value: "- € 5.157,00", color: colors.red[400] },
+}
 
-export default function Index(){
+export default function Index() {
     return (
-    <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-        <Text>Expo Router</Text>
-        <Button 
-        title="New Target" 
-        onPress={() => router.push('/target')
-
-        } />
-        <Button 
-        title="Transaction" 
-        onPress={() => router.push('/transaction/ExampleTransitionID')}
-
-        />
-        <Button 
-        title="In Progress" 
-        onPress={() => router.push('/inProgress/ExampleProgressID')}
-        
-        />
-    </View>
+        <View style={{ flex: 1 }}>
+            <HomeHeader data={summary} />
+        </View>
     )
 }
