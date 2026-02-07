@@ -3,6 +3,9 @@ import { View } from "react-native";
 import { colors } from "@/theme";
 import { Target } from "@/components/Target";
 import { List } from "@/components/List";
+import { Button } from "@/components/Button";
+import { router } from "expo-router";
+
 
 const summary = {
     total: "€ 2.043,00",
@@ -42,11 +45,14 @@ export default function Index() {
             <List title="My Targets"
                 data={targets}
                 keyExtractor={(item) => item.id}
-                renderItem={({ item }) => <Target data={item}/>}
+                renderItem={({ item }) => <Target data={item} onPress={() => router.navigate(`/inProgress/${item.id}`)}/>}
                 emptyText="No targets added. Click on new target to create one."
                 containerStyle={{ marginHorizontal: 24 }}
             />
-
+            <View style={{padding: 24, paddingBottom: 32,}}>
+                <Button title="New Target" onPress={() => router.navigate("/target")}/>
+            </View>
+            
         </View>
     )
 }
