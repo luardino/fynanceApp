@@ -1,5 +1,7 @@
-import { View, Button, } from "react-native"
+import { View } from "react-native"
 import { PageHeader } from "@/components/PageHeader"
+import { Input } from "@/components/Input"
+import { Button } from "@/components/Button"
 
 export default function Target() {
     return (
@@ -15,6 +17,11 @@ export default function Target() {
                     }
                 }
             />
+            <View style={{ marginTop: 32, gap: 16 }}>
+                <Input label="Name of Target" placeholder="Ex.: Target to Angola" />
+                <Button title="Save"/>
+            </View>
+            
         </View>
     )
 }
