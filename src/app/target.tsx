@@ -2,6 +2,7 @@ import { View } from "react-native"
 import { PageHeader } from "@/components/PageHeader"
 import { Input } from "@/components/Input"
 import { Button } from "@/components/Button"
+import { CurrencyInput } from "@/components/CurrencyInpu"
 
 export default function Target() {
     return (
@@ -12,16 +13,22 @@ export default function Target() {
                 rightButton={{
                     icon: "edit",
                     onPress: () => {
-    
+
                     }
-                    }
+                }
                 }
             />
             <View style={{ marginTop: 32, gap: 16 }}>
                 <Input label="Name of Target" placeholder="Ex.: Target to Angola" />
-                <Button title="Save"/>
+                <CurrencyInput
+                    label="Value"
+                    placeholder="Ex.: 1000.00"
+                    value={0}
+                />
+
+                <Button title="Save" />
             </View>
-            
+
         </View>
     )
 }

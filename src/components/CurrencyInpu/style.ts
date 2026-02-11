@@ -1,0 +1,25 @@
+import { StyleSheet } from "react-native";
+import { colors, fontFamily } from "@/theme";
+
+export const styles = StyleSheet.create({
+    container: {
+        width: "100%",
+        gap: 10,
+    },
+
+    label: {
+        fontSize: 12,
+        fontFamily: fontFamily.medium,
+        color: colors.gray[500],
+    },
+    input: {
+        paddingBottom: 12,
+        color: colors.black,
+        fontSize: 16,
+        fontFamily: fontFamily.regular,
+        borderBottomColor: colors.gray[400],
+        borderBottomWidth: 1,
+
+    },
+
+});
