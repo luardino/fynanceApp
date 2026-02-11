@@ -61,7 +61,7 @@ export default function InProgress() {
 
             <List
                 title="Transações"
-                data={[]}
+                data={transactions}
                 renderItem={({ item }) => (
                     <Transaction data={item} onRemove={() => {
 
