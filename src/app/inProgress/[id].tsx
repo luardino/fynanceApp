@@ -1,10 +1,13 @@
 import { View } from "react-native";
-import { useLocalSearchParams } from "expo-router";
+import { useLocalSearchParams, router } from "expo-router";
+
 import { PageHeader } from "@/components/PageHeader";
 import { Progress } from "@/components/Progress";
 import { Transaction } from "@/components/Transaction";
 import { TransactionType } from "@/utils/TransactionTypes";
 import { List } from "@/components/List";
+import { Button } from "@/components/Button";
+
 
 
 const data = {
@@ -58,15 +61,18 @@ export default function InProgress() {
 
             <List
                 title="Transações"
-                data={transactions}
+                data={[]}
                 renderItem={({ item }) => (
                     <Transaction data={item} onRemove={() => {
 
-
                      }}
-                    />)}
+                    />)
+                }
+                emptyText="No transactions"
             />
-
+            <Button title="Add Transaction" onPress={() => {
+                router.navigate(`/transaction/${params.id}`);
+             }} />
         </View>
     )
 }
