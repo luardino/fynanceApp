@@ -10,8 +10,8 @@ export const styles = StyleSheet.create({
         paddingBottom: 72,
     },
     title: {
-        padding: 24,
-        marginLeft: -24,
+        paddingVertical: 24,
+        paddingHorizontal: 0,
         fontSize: 18,
         fontFamily: fontFamily.bold,
         borderBottomWidth: 1,

@@ -10,13 +10,6 @@ export default function Target() {
             <PageHeader
                 title="Travel to Brasil"
                 subtitle="I will go to Brasil in this year, when I have a target, I done!"
-                rightButton={{
-                    icon: "edit",
-                    onPress: () => {
-
-                    }
-                }
-                }
             />
             <View style={{ marginTop: 32, gap: 16 }}>
                 <Input label="Name of Target" placeholder="Ex.: Target to Angola" />
