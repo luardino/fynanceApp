@@ -1,16 +1,27 @@
-import { Button, Text, View } from "react-native";
-import { router, useLocalSearchParams} from "expo-router";
+import { Button } from "@/components/Button";
+import { CurrencyInput } from "@/components/CurrencyInput";
+import { Input } from "@/components/Input";
+import { PageHeader } from "@/components/PageHeader";
+
+import { useLocalSearchParams } from "expo-router";
+import { View } from "react-native";
 
 
 export default function Transaction(){
     const params = useLocalSearchParams<{id: string}>();
     return (
-        <View style={{ flex: 1, justifyContent: 'center', alignItems: 'center' }}>
-            <Text>ID: {params.id}</Text>
-            <Button 
-                        title="Go Back" 
-                        onPress={() => router.back()}
-                        />
+        <View style={{ flex: 1, padding: 24 }}>
+            <PageHeader 
+            title="New Transaction"
+            subtitle="Every penny saved brings you closer to your goal. Make an effort to save and avoid withdrawing when unnecessary."
+            />
+
+            <View style={{marginTop: 34, gap: 24}}>
+                <CurrencyInput label="amount (EUR)" value={0}/>
+                <Input label="Reason (optional)" placeholder="Ex.: Investiment for Angola"/>
+                <Button title="Save" onPress={() => {}} />
+            </View>
+
         </View>
     )
 }
