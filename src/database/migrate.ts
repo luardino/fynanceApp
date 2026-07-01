@@ -22,7 +22,7 @@ export async function migrate(database: SQLiteDatabase) {
 
 
             CONSTRAINT "fk_targets_transactions" 
-            FOREIGN KEY ("target_id") REFERENCES "targets"("id") AdON DELETE CASCADE
+            FOREIGN KEY ("target_id") REFERENCES "targets"("id") ON DELETE CASCADE
 
         );
         `)
